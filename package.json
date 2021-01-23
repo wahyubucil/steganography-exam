@@ -5,8 +5,8 @@
   "author": "Wahyu Bucil <wahyubucil@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel watch ./assets/app.scss ./assets/app.ts --out-dir ./static",
-    "build": "parcel build ./assets/app.scss ./assets/app.ts --out-dir ./static"
+    "start": "parcel watch ./assets/app.scss ./assets/app.ts --out-dir ./static --no-hmr --no-source-maps",
+    "build": "parcel build ./assets/app.scss ./assets/app.ts --out-dir ./static --no-source-maps"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
