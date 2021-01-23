@@ -1,0 +1,8 @@
+# Virtualenv
+venv
+
+.DS_Store
+.vscode
+
+# Image output folder
+outputs
