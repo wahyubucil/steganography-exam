@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, send_from_directory, send_file
 from werkzeug.utils import secure_filename
 from PIL import Image
 from steganography import Steganography
@@ -16,8 +16,12 @@ if (not os.path.isdir(app.config['UPLOAD_FOLDER'])):
 def main():
   return render_template('main/index.html')
 
-@app.route('/uploads/<filename>')
+@app.route('/uploads/<filename>', methods=['GET', 'POST'])
 def uploaded_file(filename):
+  if request.method == 'POST':
+    path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    return send_file(path, as_attachment=True)
+    
   return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 @app.route('/encode', methods=['POST'])
