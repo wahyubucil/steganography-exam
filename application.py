@@ -46,12 +46,15 @@ def encode():
     hide_image_path = os.path.join(app.config['UPLOAD_FOLDER'], hide_image_filename)
     hide_image.save(hide_image_path)
 
-    encoded_image = Steganography.encode(Image.open(show_image_path), Image.open(hide_image_path))
-    encoded_image_filename = 'encoded_' + show_image_filename
-    encoded_image_path = os.path.join(app.config['UPLOAD_FOLDER'], encoded_image_filename)
-    encoded_image.save(encoded_image_path)
+    try:
+      encoded_image = Steganography.encode(Image.open(show_image_path), Image.open(hide_image_path))
+      encoded_image_filename = 'encoded_' + show_image_filename
+      encoded_image_path = os.path.join(app.config['UPLOAD_FOLDER'], encoded_image_filename)
+      encoded_image.save(encoded_image_path)
 
-    return render_template('main/encode.html')
+      return render_template('main/encode.html', filename=encoded_image_filename)
+    except ValueError as e:
+      return str(e)
   else:
     return 'Not allowed extensions'
 
