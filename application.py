@@ -77,6 +77,6 @@ def decode():
       decoded_image_path = os.path.join(app.config['UPLOAD_FOLDER'], decoded_image_filename)
       decoded_image.save(decoded_image_path)
 
-      return render_template('decode/show.html')
+      return render_template('decode/show.html', filename=decoded_image_filename)
   
   return render_template('decode/index.html')
