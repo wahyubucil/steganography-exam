@@ -31,6 +31,8 @@ source venv/bin/activate
 3. Install packages
 
 ```bash
+yarn install
+
 pip3 install -r requirements.txt
 ```
 
@@ -39,6 +41,8 @@ pip3 install -r requirements.txt
 - Start the app without development features
 
 ```bash
+yarn build
+
 FLASK_APP=application.py flask run
 ```
 
@@ -46,4 +50,7 @@ FLASK_APP=application.py flask run
 
 ```bash
 FLASK_APP=application.py FLASK_ENV=development flask run
+
+# On other Terminal
+yarn start
 ```

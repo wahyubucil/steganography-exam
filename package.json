@@ -1,0 +1,15 @@
+{
+  "name": "steganography-exam",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Wahyu Bucil <wahyubucil@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel watch ./assets/app.scss ./assets/app.ts --out-dir ./static",
+    "build": "parcel build ./assets/app.scss ./assets/app.ts --out-dir ./static"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.1.3"
+  }
+}
