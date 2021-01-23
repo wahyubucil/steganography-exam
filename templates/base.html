@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
   </head>
   <body>
-    {% block content %}{% endblock %}
+    <header>
+      <div class="container">
+        <nav>
+          <a href="{{ url_for('main') }}">Home</a>
+          <a href="{{ url_for('decode') }}">Decode</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
   </body>
 </html>

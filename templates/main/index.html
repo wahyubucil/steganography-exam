@@ -1,46 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-<header>
-  <div class="container">
-    <nav>
-      <a href="{{ url_for('main') }}">Home</a>
-      <a href="{{ url_for('decode') }}">Decode</a>
-    </nav>
-  </div>
-</header>
-<main>
-  <div class="container">
-    <h1 class="title">Hide Image Inside Image 🤫</h1>
-    <form action="{{ url_for('encode') }}" class="form" method="POST" enctype="multipart/form-data">
-      <div class="row">
-        <div class="column">
-          <div class="image-container">
-            <h3>Image to <strong>Show</strong></h3>
-            <div class="image-content"></div>
-            <label for="show_image" class="button button-outline">Choose Image</label>
-            <input type="file" name="show_image" accept="image/*" id="show_image" required>
+<div class="container">
+  <h1 class="title">Hide Image Inside Image 🤫</h1>
+  <form action="{{ url_for('encode') }}" class="form" method="POST" enctype="multipart/form-data">
+    <div class="row">
+      <div class="column">
+        <div class="image-container">
+          <h3>Image to <strong>Show</strong></h3>
+          <div class="image-content">
+            <img src="/uploads/decoded_encoded_show_za41ut_lhfa79.bmp" alt="" srcset="">
           </div>
-        </div>
-        <div class="separator"></div>
-        <div class="column">
-          <div class="image-container">
-            <h3>Image to <strong>Hide</strong></h3>
-            <div class="image-content"></div>
-            <label for="hide_image" class="button button-outline">Choose Image</label>
-            <input type="file" name="hide_image" accept="image/*" id="hide_image" required>
-          </div>
+          <label for="show_image" class="button button-outline">Choose Image</label>
+          <input type="file" name="show_image" accept="image/*" id="show_image" required>
         </div>
       </div>
-      <button type="submit" class="button submit-btn">Submit</button>
-    </form>
-    <div class="note">
-      <h3>Note :</h3>
-      <ul>
-        <li>Recommended extensions: TIFF & BMP (Because it's an uncompressed format that provides higher resolution).</li>
-        <li><strong>Image to Hide</strong> dimensions size should be the same or less than <strong>Image to Show</strong></strong>.</li>
-      </ul>
+      <div class="separator"></div>
+      <div class="column">
+        <div class="image-container">
+          <h3>Image to <strong>Hide</strong></h3>
+          <div class="image-content"></div>
+          <label for="hide_image" class="button button-outline">Choose Image</label>
+          <input type="file" name="hide_image" accept="image/*" id="hide_image" required>
+        </div>
+      </div>
     </div>
+    <button type="submit" class="button submit-btn">Submit</button>
+  </form>
+  <div class="note">
+    <h3>Note :</h3>
+    <ul>
+      <li>Recommended extensions: TIFF & BMP (Because it's an uncompressed format that provides higher resolution).</li>
+      <li><strong>Image to Hide</strong> dimensions size should be the same or less than <strong>Image to Show</strong></strong>.</li>
+    </ul>
   </div>
-</main>
+</div>
 {% endblock %}

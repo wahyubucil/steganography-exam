@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container container-small">
+  <h1 class="title">Here's Your Secret Image 🙈</h1>
+  <form action="{{ url_for('decode') }}" class="form" method="POST" enctype="multipart/form-data">
+    <div class="image-container">
+      <div class="image-content">
+        <img src="/uploads/decoded_encoded_show_za41ut_lhfa79.bmp" alt="" srcset="">
+      </div>
+    </div>
+    <button type="submit" class="button submit-btn">Download Image</button>
+  </form>
+</div>
+{% endblock %}

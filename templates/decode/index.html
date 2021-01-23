@@ -1,8 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form action="{{ url_for('decode') }}" method="POST" enctype="multipart/form-data">
-  <input type="file" name="image" accept="image/*" required>
-  <button type="submit">Submit</button>
-</form>
+<div class="container container-small">
+  <h1 class="title">Decode Your Secret Image 🤔</h1>
+  <form action="{{ url_for('decode') }}" class="form" method="POST" enctype="multipart/form-data">
+    <div class="image-container">
+      <div class="image-content">
+        <img src="/uploads/decoded_encoded_show_za41ut_lhfa79.bmp" alt="" srcset="">
+      </div>
+      <label for="image" class="button button-outline">Choose Image</label>
+      <input type="file" name="image" accept="image/*" id="image" required>
+    </div>
+    <button type="submit" class="button submit-btn">Submit</button>
+  </form>
+</div>
 {% endblock %}
