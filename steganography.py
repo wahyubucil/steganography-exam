@@ -125,18 +125,4 @@ class Steganography(object):
     new_image = new_image.crop((0, 0, original_size[0], original_size[1]))
 
     return new_image
-
-
-if '__main__':
-  show_image = Image.open('./samples/show.tiff')
-  hide_image = Image.open('./samples/hide.tiff')
-
-  encoded_image = Steganography.encode(show_image, hide_image)
-  encoded_image.save('outputs/encoded_image.tiff')
-  
-  # encoded_image = Image.open('outputs/encoded_image.tiff')
-  # decoded_image = Steganography.decode(encoded_image)
-  # decoded_image.save('outputs/decoded_image.tiff')
-        
-
-
+    

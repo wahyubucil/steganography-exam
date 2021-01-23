@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/encode" method="POST" enctype="multipart/form-data">
+  <input type="file" name="show_image" accept="image/*" required>
+  <input type="file" name="hide_image" accept="image/*" required>
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}

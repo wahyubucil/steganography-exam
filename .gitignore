@@ -1,8 +1,9 @@
 # Virtualenv
 venv
 
+__pycache__
+
 .DS_Store
 .vscode
 
-# Image output folder
-outputs
+uploads
